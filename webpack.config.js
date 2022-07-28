@@ -35,7 +35,13 @@ module.exports = {
     }]
   },
   devServer: {
-    static: './public'
+    static: './public',
+    devMiddleware: {
+      writeToDisk: true,
+    },
+    historyApiFallback:{
+      index:'build/index.html'
+  },
   },
   externals: {
     react: 'React',
