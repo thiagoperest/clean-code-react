@@ -40,7 +40,9 @@ module.exports = {
       writeToDisk: true,
     },
     historyApiFallback:{
-      index:'build/index.html'
+      rewrites: [
+        { from: /./, to: '/index.html' }
+      ]
   },
   },
   externals: {
