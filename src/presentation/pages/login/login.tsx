@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable @typescript-eslint/no-misused-promises */
+import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import Styles from './login-styles.scss';
-import { LoginHeader, Input, FormStatus, Footer } from '@/presentation/components';
-import Context from '@/presentation/contexts/form/form-context';
-import { Validation } from '@/presentation/protocols/validation';
-import { Authentication, SaveAccessToken } from '@/domain/usecases';
+import Styles from './login-styles.scss'
+import { LoginHeader, Input, FormStatus, Footer } from '@/presentation/components'
+import Context from '@/presentation/contexts/form/form-context'
+import { Validation } from '@/presentation/protocols/validation'
+import { Authentication, SaveAccessToken } from '@/domain/usecases'
 
 type Props = {
   validation: Validation
@@ -14,14 +15,14 @@ type Props = {
 
 const Login: React.FC<Props> = ({ validation, authentication, saveAccessToken }: Props) => {
   const history = useHistory()
-  const [ state, setState ] = useState({
+  const [state, setState] = useState({
     isLoading: false,
     email: '',
     password: '',
     emailError: '',
     passwordError: '',
     mainError: ''
-  });
+  })
 
   useEffect(() => {
     setState({
@@ -38,17 +39,17 @@ const Login: React.FC<Props> = ({ validation, authentication, saveAccessToken }:
         return
       }
       setState({ ...state, isLoading: true })
-      const account = await authentication.auth({ 
-        email: state.email, 
-        password: state.password 
+      const account = await authentication.auth({
+        email: state.email,
+        password: state.password
       })
       await saveAccessToken.save(account.accessToken)
       history.replace('/')
     } catch (error) {
-      setState({ 
-        ...state, 
+      setState({
+        ...state,
         isLoading: false,
-        mainError: error.message 
+        mainError: error.message
       })
     }
   }
