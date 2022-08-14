@@ -25,8 +25,8 @@ const makeSut = (params?: SutParams): SutTypes => {
   validationStub.errorMessage = params?.validationError
   const sut = render(
     <Router history={history}>
-      <Login 
-        validation={validationStub} 
+      <Login
+        validation={validationStub}
         authentication={authenticationSpy}
         saveAccessToken={saveAccessTokenMock}
       />
@@ -39,7 +39,7 @@ const makeSut = (params?: SutParams): SutTypes => {
   }
 }
 
-const simulateValidSubmit = async (sut: RenderResult, email = faker.internet.email(), password = faker.internet.password() ): Promise<void> => {
+const simulateValidSubmit = async (sut: RenderResult, email = faker.internet.email(), password = faker.internet.password()): Promise<void> => {
   populateEmailField(sut, email)
   populatePasswordField(sut, password)
   const form = sut.getByTestId('form')
@@ -57,7 +57,7 @@ const populatePasswordField = (sut: RenderResult, password = faker.internet.pass
   fireEvent.input(emailInput, { target: { value: password } })
 }
 
-const testStatusForField = (sut: RenderResult, fieldName: string, validationError?: string ): void => {
+const testStatusForField = (sut: RenderResult, fieldName: string, validationError?: string): void => {
   const emailStatus = sut.getByTestId(`${fieldName}-status`)
   expect(emailStatus.title).toBe(validationError || 'Tudo certo!')
   expect(emailStatus.textContent).toBe(validationError ? '🔴' : '🟢')
@@ -65,7 +65,7 @@ const testStatusForField = (sut: RenderResult, fieldName: string, validationErro
 
 const testErrorWrapChildCount = (sut: RenderResult, count: number): void => {
   const errorWrap = sut.getByTestId('error-wrap')
-    expect(errorWrap.childElementCount).toBe(count)
+  expect(errorWrap.childElementCount).toBe(count)
 }
 
 const testElementExists = (sut: RenderResult, fieldName: string): void => {
