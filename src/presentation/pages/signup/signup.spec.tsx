@@ -30,7 +30,7 @@ const makeSut = (params?: SutParams): SutTypes => {
 }
 
 const simulateValidSubmit = async (sut: RenderResult, name = faker.name.findName(), email = faker.internet.email(), password = faker.internet.password()): Promise<void> => {
-  Helper.populateField(sut, 'name', email)
+  Helper.populateField(sut, 'name', name)
   Helper.populateField(sut, 'email', email)
   Helper.populateField(sut, 'password', password)
   Helper.populateField(sut, 'passwordConfirmation', password)
