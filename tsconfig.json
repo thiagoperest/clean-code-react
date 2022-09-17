@@ -16,5 +16,8 @@
     "resolveJsonModule": true
   },
   "include": ["src", "tests", "src/a.spec.ts"],
-  "exclude": ["tests/e2e/cypress"]
+  "exclude": [
+    "src/main/test/cypress",
+    "tests/e2e/cypress",
+  ]
 }
