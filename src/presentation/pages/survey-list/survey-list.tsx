@@ -21,6 +21,30 @@ const SurveyList: React.FC = () => {
             </div>
             <footer>Ver Resultado</footer>
           </li>
+          <li>
+            <div className={Styles.surveyContent}>
+              <Icon className={Styles.iconWrap} iconName={IconName.thumbDown} />
+              <time>
+                <span className={Styles.day}>24</span>
+                <span className={Styles.month}>09</span>
+                <span className={Styles.year}>2022</span>
+              </time>
+              <p>Qual é o seu framework web favorito?</p>
+            </div>
+            <footer>Ver Resultado</footer>
+          </li>
+          <li>
+            <div className={Styles.surveyContent}>
+              <Icon className={Styles.iconWrap} iconName={IconName.thumbDown} />
+              <time>
+                <span className={Styles.day}>24</span>
+                <span className={Styles.month}>09</span>
+                <span className={Styles.year}>2022</span>
+              </time>
+              <p>Qual é o seu framework web favorito?</p>
+            </div>
+            <footer>Ver Resultado</footer>
+          </li>
         </ul>
       </div>
       <Footer />
