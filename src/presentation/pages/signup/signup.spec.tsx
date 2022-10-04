@@ -7,11 +7,11 @@ import { Helper, ValidationStub, AddAccountSpy } from '@/presentation/test'
 import { EmailInUseError } from '@/domain/errors'
 import { createMemoryHistory } from 'history'
 import { Router } from 'react-router-dom'
-import { AccountModel } from '@/domain/models'
+import { AddAccount } from '@/domain/usecases'
 
 type SutTypes = {
   addAccountSpy: AddAccountSpy
-  setCurrentAccountMock: (account: AccountModel) => void
+  setCurrentAccountMock: (account: AddAccount.Model) => void
 }
 
 type SutParams = {
