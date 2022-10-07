@@ -38,13 +38,13 @@ module.exports = {
   devServer: {
     static: './public',
     devMiddleware: {
-      writeToDisk: true,
+      writeToDisk: true
     },
-    historyApiFallback:{
+    historyApiFallback: {
       rewrites: [
         { from: /./, to: '/index.html' }
       ]
-  },
+    }
   },
   externals: {
     react: 'React',
@@ -54,6 +54,6 @@ module.exports = {
     new CleanWebpackPlugin(),
     new DefinePlugin({
       'process.env.API_URL': JSON.stringify('http://fordevs.herokuapp.com/api')
-    }),
+    })
   ]
 }
