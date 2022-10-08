@@ -1,5 +1,4 @@
-import { CompareFieldsValidation } from '@/validation/compare-fields/compare-fields-validation'
-import { EmailValidation, MinLengthValidation, RequiredFieldValidation, ValidationComposite } from '@/validation/validators'
+import { EmailValidation, MinLengthValidation, RequiredFieldValidation, ValidationComposite, CompareFieldsValidation } from '@/validation/validators'
 import { makeSignUpValidation } from './signup-validation-factory'
 
 describe('SignUpValidationFactory', () => {
